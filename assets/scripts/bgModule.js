@@ -44,6 +44,9 @@ cc.Class({
         }, this);
         this.node.on(cc.Node.EventType.MOUSE_LEAVE, function () {
             this.node.off(cc.Node.EventType.MOUSE_MOVE, this.move, this);
+            if (this._callback) {
+                this._callback();
+            }
         }, this);
         this.node.on(cc.Node.EventType.MOUSE_UP, function () {
             this.node.off(cc.Node.EventType.MOUSE_MOVE, this.move, this);
