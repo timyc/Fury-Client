@@ -2,15 +2,17 @@ cc.Class({
     extends: cc.Component,
 
     move: function (event) {
-        if ((this.node.x < 725) && (this.node.x > -725)) {
-            this.node.x += ((this.node.x + event.getDeltaX() > 725) || (this.node.x + event.getDeltaX() < -725) ? 0 : event.getDeltaX());
+        var x_param = 400;
+        var y_param = 250;
+        if ((this.node.x < x_param) && (this.node.x > -x_param)) {
+            this.node.x += ((this.node.x + event.getDeltaX() > x_param) || (this.node.x + event.getDeltaX() < -x_param) ? 0 : event.getDeltaX());
         } else {
-            if (this.node.x >= 725) {
+            if (this.node.x >= x_param) {
                 if (event.getDeltaX() < 0)
                 {
                     this.node.x += event.getDeltaX();
                 }
-            } else if (this.node.x <= -725) {
+            } else if (this.node.x <= -x_param) {
                 if (event.getDeltaX() > 0)
                 {
                     this.node.x += event.getDeltaX();
@@ -18,15 +20,15 @@ cc.Class({
             }
         }
 
-        if ((this.node.y < 250) && (this.node.y > -250)) {
-            this.node.y += ((this.node.y + event.getDeltaY() > 250) || (this.node.y + event.getDeltaY() < -250) ? 0 : event.getDeltaY());
+        if ((this.node.y < y_param) && (this.node.y > -y_param)) {
+            this.node.y += ((this.node.y + event.getDeltaY() > y_param) || (this.node.y + event.getDeltaY() < -y_param) ? 0 : event.getDeltaY());
         } else {
-            if (this.node.y >= 250) {
+            if (this.node.y >= y_param) {
                 if (event.getDeltaY() < 0)
                 {
                     this.node.y += event.getDeltaY();
                 }
-            } else if (this.node.y <= -250) {
+            } else if (this.node.y <= -y_param) {
                 if (event.getDeltaY() > 0)
                 {
                     this.node.y += event.getDeltaY();

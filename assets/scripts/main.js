@@ -9,8 +9,9 @@ cc.Class({
     },
 
     // use this for initialization
-    onLoad: function () {
-    	cc.director.getCollisionManager().enabled = true;
+    start () {
+    	//cc.director.getCollisionManager().enabled = true;
+        cc.director.getCollisionManager().enabledDebugDraw = true;
         this.label.string = 'the best game ever made';
     },
 
